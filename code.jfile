@@ -1,0 +1,28 @@
+ function EditPlayerNames(){    <!--This function is used to create a name for the players that are going to play-->
+        Player1 = prompt("Change Player1 Name Here") <!-- players will get a notifiction that they can change their name up top-->
+        Player2 = prompt("Change Player2 Name Here")
+
+        if(Player1.length<1 || Player2.length <1){
+        alert('Please Enter Name'); <!-- will get an alert that they left the name change blank-->
+     return;}
+     document.querySelector("p.Player1")
+     .innerHTML = Player1;
+     document.querySelector("p.Player2")
+     .innerHTML = Player2; <!-- will show the names have been chnaged on website-->
+     }
+
+     function rollTheDice() { <!--This function was supposse to roll the dice and see who rolls the higher number-->
+            let diceNum1 = document.querySelector(".img1"); 
+            let diceNum2 = document.querySelector(".img2");
+
+            diceNum1.setAttribute("src", "diceroll.gif") <!-- was suppose to show the dices spinnung with a gif-->
+            diceNum2.setAttribute("src", "diceroll.gif")
+
+            let result = document.querySelector('h1') <!-- shows who won-->
+            result.innerHTML = ""
+            setTimeout(() => {
+                let randomNumber1 = Math.floor(Math.random() * 6) + 1; <!--the dices pick a number 1-6 randomly while spinning-->
+                let randomNumber2 = Math.floor(Math.random() * 6) + 1;
+
+                diceNum1.setAttribute('src', 'dice' + randomNumber1 + '.png'); <!-- will show which number the dice falls on randomly-->
+                diceNum2.setAttribute('src', 'dice' + randomNumber2 + '.png');
